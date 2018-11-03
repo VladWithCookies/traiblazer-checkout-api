@@ -11,6 +11,6 @@ class Order < ApplicationRecord
                                               inverse_of: :addressable,
                                               class_name: Address.name,
                                               autosave: true
-  has_one :shipping_method
   has_one :credit_card
+  has_one :shipping_method
 end

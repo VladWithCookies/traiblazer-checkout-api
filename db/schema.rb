@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2018_09_30_114000) do
     t.string "last_digits"
     t.string "name"
     t.string "cc_type"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_credit_cards_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -50,8 +52,10 @@ ActiveRecord::Schema.define(version: 2018_09_30_114000) do
 
   create_table "shipping_methods", force: :cascade do |t|
     t.string "name"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_shipping_methods_on_order_id"
   end
 
 end

@@ -6,6 +6,7 @@ class CreateCreditCards < ActiveRecord::Migration[5.2]
       t.string :last_digits
       t.string :name
       t.string :cc_type
+      t.references :order, index: true
 
       t.timestamps
     end
